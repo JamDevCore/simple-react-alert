@@ -4,28 +4,44 @@
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
-simple-alert-react is designed to be a really easy to use alert system for react.
+simple-react-alert is an easy to use alert system for react.
 
-Just import the Alert component to the top level of your app, then import and call the openAlert() function from anywhere in the app, just add a message by using the message prop and choose a type.
+To use this package, import the Alert component to the top level of your app, then import and call the openAlert() function from anywhere in the app. For instance, you could trigger the alert after an api call returns, or after submitting a form.
 
-# Types
+The openAlert function takes three different parameters:
+
+````
+  openAlert({ message, type, duration })
+````
+
+The message type is the string to be rendered in the alert box.
+
+The default duration is 2500ms but can be overwritten here.
+
+The types are listed below and change the colour and icon of the alert box.
+
+## Types
 - type: 'success'
 - type: 'warning'
 - type: 'info'
 - type: 'danger'
 
-You can update the colours to your own custom choice by using the following
+You can also update the colours of the different types of alert by adding your own custom choice to the top level <Alert /> component.
 
-# Change colour
+## Change colour
 
- You can also edit the colours by using the following props:
+ You can edit the colours by using the following props:
 
  - successColor
  - warningColor
  - infoColor
  - dangerColor
 
- These props accept hex colors, and will default back to the original if presented with an incorrect value type;
+````
+<Alert successColor: '#ffffff' />
+````
+
+ This property accept hex colors, and will default back to the original if presented with an incorrect value type;
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo

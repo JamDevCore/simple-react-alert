@@ -1,12 +1,12 @@
 {
   "name": "simple-react-alert",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An easy to use alert component for react",
   "main": "lib/index.js",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/JamesVitaly/simple-react-alert.git"
-},
+    "type": "git",
+    "url": "https://github.com/JamesVitaly/simple-react-alert.git"
+  },
   "module": "es/index.js",
   "files": [
     "css",

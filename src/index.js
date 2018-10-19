@@ -78,7 +78,7 @@ export default class Alert extends Component {
   }
 
   openAlert({ message, type, duration }) {
-  const displayTime = duration || 3500;
+  const displayTime = duration || 2500;
   const component = this;
   if (component.state.open === false) {
     component.setState({

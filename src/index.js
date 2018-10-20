@@ -36,6 +36,7 @@ const StyledAlert = styled.div`
   bottom: 0;
   left: 0;
   margin: 50px;
+  z-index: 1000;
   color: white;
   border-radius: 3px;
   font-size: 14px;

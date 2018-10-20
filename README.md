@@ -6,6 +6,14 @@
 
 simple-react-alert is an easy to use alert system for react.
 
+https://www.npmjs.com/package/simple-react-alert
+
+To install run
+
+````
+npm i simple-react-alert
+````
+
 To use this package, import the Alert component to the top level of your application, then import and call the openAlert() function from anywhere in the app. For instance, you could trigger the alert after an api call returns, after submitting a form, or when clicking a button.
 
 The openAlert function takes three different parameters:

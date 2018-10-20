@@ -6,7 +6,7 @@
 
 simple-react-alert is an easy to use alert system for react.
 
-To use this package, import the Alert component to the top level of your app, then import and call the openAlert() function from anywhere in the app. For instance, you could trigger the alert after an api call returns, or after submitting a form.
+To use this package, import the Alert component to the top level of your application, then import and call the openAlert() function from anywhere in the app. For instance, you could trigger the alert after an api call returns, after submitting a form, or when clicking a button.
 
 The openAlert function takes three different parameters:
 
@@ -14,19 +14,24 @@ The openAlert function takes three different parameters:
   openAlert({ message, type, duration })
 ````
 
-The message type is the string to be rendered in the alert box.
+The message type is the string of text to be rendered in the alert box, shown to your users
 
-The default duration is 2500ms but can be overwritten here.
+The default duration of an alert is 2500ms but can be overwritten with each different alert, allowing you to show alerts with lengthier messages for longer or short ones for less.
 
-The types are listed below and change the colour and icon of the alert box.
+The types of alert you can use are listed below. The type changes the colour and the icon of the alert box. Default colours match the style of the alert box, e.g red for danger.
 
 ## Types
+
 - type: 'success'
 - type: 'warning'
 - type: 'info'
 - type: 'danger'
 
-You can also update the colours of the different types of alert by adding your own custom choice to the top level <Alert /> component.
+````
+openAlert({ message: 'Your changes have succesfully saved', type: 'success' });
+````
+
+You can also update the colours for the different types of alert to match your own color scheme by adding your own custom choice to the top level <Alert /> component.
 
 ## Change colour
 
@@ -41,7 +46,7 @@ You can also update the colours of the different types of alert by adding your o
 <Alert successColor: '#ffffff' />
 ````
 
- This property accept hex colors, and will default back to the original if presented with an incorrect value type;
+ This property accepts hex colors, and will default back to the original if presented with an incorrect value type;
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo

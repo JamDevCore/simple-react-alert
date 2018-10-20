@@ -38,10 +38,15 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
   },
-  "author": "",
+  "author": "James Vitaly",
   "homepage": "",
   "license": "MIT",
   "keywords": [
-    "react-component"
+    "react-component",
+    "alert",
+    "simple-react-alert",
+    "pop-up",
+    "dialog",
+    "react-alert"
   ]
 }

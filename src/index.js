@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { CSSTransitionGroup } from 'react-transition-group'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckCircle, faTimesCircle, faExclamationCircle, faQuestionCircle } from '@fortawesome/free-solid-svg-icons'
 
@@ -10,19 +10,19 @@ let timer;
 
 const Container = styled.div`
 .alert-enter {
-  left: -400px;
+  left: -600px;
   }
 
 .alert-enter.alert-enter-active {
   left: 0;
-  transition: left 200ms ease-in;
+  transition: left 300ms ease-in;
 }
 
-.alert-leave {
+.alert-exit {
   opacity: 1;
 }
 
-.alert-leave.alert-leave-active {
+.alert-exit.alert-exit-active {
   opacity: 0.01;
   transition: opacity 200ms ease-in;
 }
@@ -44,7 +44,7 @@ const StyledAlert = styled.div`
   flex-direction: column;
   justify-content: center;
   font-family: 'Open Sans', sans-serif;
-  .message {
+  .Alert-message-container {
     display: flex;
     flex-direction: row;
     padding: 20px;
@@ -145,24 +145,26 @@ export default class Alert extends Component {
     const { open } = this.state;
     const { fontColor } = this.props;
     const color = this.testColor(fontColor) ? fontColor : '#ffffff';
-    const message = <span className="message">
+    const message = <span className="Alert-message-container">
       <FontAwesomeIcon className="icon" icon={this.getIcon()} />
       <p className="Alert-text" style={{ color }}>{this.state.message}</p>
     </span>
     return (
       <Container>
-      <CSSTransitionGroup
-        transitionName="alert"
-        transitionEnterTimeout={200}
-        transitionLeaveTimeout={200}
-      >
+      <TransitionGroup>
         {open ?
+        <CSSTransition
+          key={this.state.message}
+          classNames="alert"
+          timeout={{ enter: 300, exit: 200}}
+        >
           <StyledAlert
-            key={message}
+            className="Alert-container"
             style={{background: `${this.getBGColor()}`}}>
             {message}
-          </StyledAlert> : null}
-          </CSSTransitionGroup>
+          </StyledAlert>
+        </CSSTransition> : null}
+        </TransitionGroup>
       </Container>
     )
   }

@@ -39,9 +39,9 @@ The types of alert you can use are listed below. The type changes the colour and
 openAlert({ message: 'Your changes have succesfully saved', type: 'success' });
 ````
 
-You can also update the colours for the different types of alert to match your own color scheme by adding your own custom choice to the top level <Alert /> component.
-
 ## Change colour
+
+You can also update the colours for the different types of alert to match your own color scheme by adding your own custom choice to the top level <Alert /> component.
 
  You can edit the colours by using the following props:
 
@@ -54,7 +54,16 @@ You can also update the colours for the different types of alert to match your o
 <Alert successColor: '#ffffff' />
 ````
 
- This property accepts hex colors, and will default back to the original if presented with an incorrect value type;
+This property accepts hex colors, and will default back to the original if presented with an incorrect value type.
+
+## Further custom styles
+
+For more css customisations you can target these different elements in your own css.
+
+- .Alert-container (The div element which functions as the alert box)
+- .Alert-message-container (the span element which wraps the icon and message)
+- .Alert-text (the p element which displays the message)
+
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
